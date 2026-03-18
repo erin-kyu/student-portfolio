@@ -48,6 +48,16 @@
   --bs-card-bg:      #241e19;
   --bs-tertiary-bg:  #1f1914;
   --bs-border-color: rgba(255, 255, 255, 0.08);
+
+  --ink:        #f2ede6;
+  --ink-soft:   #c4bdb4;
+  --dust:       #a89f96;
+  --sand:       #1f1914;
+  --cream:      #1a1612;
+  --paper:      #241e19;
+  --line:       rgba(255, 255, 255, 0.1);
+  --rust:       #d4874d;
+  --rust-dim:   #c4752a;
 }
 
 /* --- Global --- */
