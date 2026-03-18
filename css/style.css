@@ -257,24 +257,24 @@ footer { background-color: var(--sand); border-top: 1px solid var(--line) !impor
 .hero-image-wrapper { animation: fadeInUp 0.8s var(--ease) 0.2s forwards; opacity: 0; }
 
 .experience-date {
-    font-family: var(--mono);
+    background-color: var(--rust); 
+    color: var(--paper);          
+    
+    padding: 6px 14px;            
+    border-radius: 6px;            
+    
+    font-family: var(--mono);    
     font-size: 0.75rem;
     font-weight: 500;
-
-    color: var(--paper);       
-    background-color: var(--rust); 
-
-    padding: 6px 14px;
-    border-radius: 6px;
-    
     letter-spacing: 0.05em;
-    white-space: nowrap;
-    display: inline-block;
     
-    align-self: flex-start; 
+    display: inline-block;
+    white-space: nowrap;           
+    box-shadow: 0 2px 4px rgba(196, 87, 42, 0.2); 
 }
-.experience-card:hover .experience-date {
+
+.experience-item:hover .experience-date {
     background-color: var(--rust-dim);
-    transform: scale(1.02);
+    transform: translateY(-1px);
     transition: all 0.2s ease;
 }
