@@ -30,7 +30,6 @@
 
   <!-- ============================================================
        FEATURE 1: BOOTSTRAP NAVBAR
-       .navbar-expand-lg, .sticky-top, collapse toggle, data-bs-*
        ============================================================ -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
@@ -72,8 +71,6 @@
 
     <!-- ============================================================
          HERO SECTION
-         FEATURE 5: Grid (.row, .col-lg-7, .col-lg-5)
-         FEATURE 6: Tooltips on social icons
          ============================================================ -->
     <section id="hero" class="d-flex align-items-center min-vh-100">
       <div class="container">
@@ -114,7 +111,7 @@
 
 
     <!-- ============================================================
-         STATS — FEATURE 5: Grid
+         STATS
          ============================================================ -->
     <section id="stats" class="stats-section">
       <div class="container">
@@ -137,7 +134,7 @@
 
 
     <!-- ============================================================
-         CLOCK SECTION (from original homepage)
+         CLOCK SECTION
          ============================================================ -->
     <section id="clock" class="clock-section">
       <div class="container text-center">
@@ -153,8 +150,7 @@
 
 
     <!-- ============================================================
-         ABOUT SECTION (from about.html — full content)
-         FEATURE 4: Badges   FEATURE 5: Grid   FEATURE 6: Tooltips
+         ABOUT SECTION
          ============================================================ -->
     <section id="about" class="portfolio-section section-alt">
       <div class="container">
@@ -165,7 +161,7 @@
           </div>
           <div class="col-12 col-md-8">
             <h2 class="section-heading mb-4">About Me</h2>
-            
+
             <p>I'm Erin, a third-year Computer Engineering student at De La Salle University from Angeles City, Pampanga. I originally set out to study Computer Science, but ended up in CpE — and honestly, it's grown on me. It's pushed me in ways I didn't expect, even if I'm still figuring out which corner of the field I want to eventually land in.</p>
 
             <h3 class="h6 fw-semibold mt-4 mb-2">My Skills</h3>
@@ -198,8 +194,9 @@
       </div>
     </section>
 
+
     <!-- ============================================================
-         WHAT I DO — FEATURE 2: Cards + FEATURE 5: Grid
+         WHAT I DO
          ============================================================ -->
     <section id="interests" class="portfolio-section">
       <div class="container">
@@ -247,8 +244,7 @@
 
 
     <!-- ============================================================
-         PROJECTS — FEATURE 2: Cards  FEATURE 3: Modals
-         FEATURE 4: Badges  FEATURE 5: Grid
+         PROJECTS
          ============================================================ -->
     <section id="projects" class="portfolio-section section-alt">
       <div class="container">
@@ -257,7 +253,6 @@
 
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
-          <!-- Card 1: Portfolio Website -->
           <div class="col">
             <article class="card h-100 shadow-sm border-0 project-card"
               role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#projectModal1">
@@ -279,7 +274,6 @@
             </article>
           </div>
 
-          <!-- Card 2: Financial Technology -->
           <div class="col">
             <article class="card h-100 shadow-sm border-0 project-card"
               role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#projectModal2">
@@ -301,7 +295,6 @@
             </article>
           </div>
 
-          <!-- Card 3: Data Structures -->
           <div class="col">
             <article class="card h-100 shadow-sm border-0 project-card"
               role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#projectModal3">
@@ -327,7 +320,10 @@
       </div>
     </section>
 
-    <!-- PROJECT MODALS (FEATURE 3) -->
+
+    <!-- ============================================================
+         PROJECT MODALS
+         ============================================================ -->
     <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
@@ -409,7 +405,7 @@
 
 
     <!-- ============================================================
-         SKILLS — FEATURE 5: Grid, Progress bars with ARIA
+         SKILLS
          ============================================================ -->
     <section id="skills" class="portfolio-section">
       <div class="container">
@@ -459,77 +455,75 @@
 
 
     <!-- ============================================================
-         EXPERIENCE (from experience.html — full timeline)
-         FEATURE 2: Cards   FEATURE 4: Badges   FEATURE 5: Grid
+         EXPERIENCE
          ============================================================ -->
     <section id="experience" class="portfolio-section section-alt">
-          <div class="container">
-            <h2 class="section-heading text-center mb-2">Experiences</h2>
-            <p class="text-center text-body-secondary mb-5"><em>DISCLAIMER: This portion of the portfolio is a work in progress and contains non-factual data at the moment.</em></p>
+      <div class="container">
+        <h2 class="section-heading text-center mb-2">Experiences</h2>
+        <p class="text-center text-body-secondary mb-5"><em>DISCLAIMER: This portion of the portfolio is a work in progress and contains non-factual data at the moment.</em></p>
 
-            <div class="row justify-content-center">
-              <div class="col-12 col-lg-8">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
 
-                <div class="card border-0 shadow-sm mb-4 experience-card">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
-                      <h3 class="card-title h5 mb-0">Engineering Intern</h3>
-                      <span class="experience-date">June 2025 – August 2025</span>
-                    </div>
-                    <p class="text-rust fw-medium mb-1">TechVenture Solutions Inc.</p>
-                    <p class="text-body-secondary">Worked as a summer intern in the hardware engineering department, contributing to the development of embedded systems for smart city applications.</p>
-                    <ul class="text-body-secondary small">
-                      <li>Assisted in designing circuit boards for IoT sensor modules</li>
-                      <li>Programmed microcontrollers using C/C++ for sensor data collection</li>
-                      <li>Collaborated with senior engineers on system integration testing</li>
-                      <li>Documented technical specifications and testing procedures</li>
-                    </ul>
-                  </div>
+            <div class="card border-0 shadow-sm mb-4 experience-card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                  <h3 class="card-title h5 mb-0">Engineering Intern</h3>
+                  <span class="experience-date">June 2025 – August 2025</span>
                 </div>
-
-                <div class="card border-0 shadow-sm mb-4 experience-card">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
-                      <h3 class="card-title h5 mb-0">Student Organization — Technical Lead</h3>
-                      <span class="experience-date">June 2024 – Present</span>
-                    </div>
-                    <p class="text-rust fw-medium mb-1">La Salle Computer Society</p>
-                    <p class="text-body-secondary">Leading the technical team in organizing workshops, hackathons, and technical training sessions for students interested in computer engineering.</p>
-                    <ul class="text-body-secondary small">
-                      <li>Organize technical workshops and seminars</li>
-                      <li>Coordinate with industry professionals for mentorship programs</li>
-                      <li>Plan and execute annual hackathon events</li>
-                      <li>Mentor junior members in their technical projects</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div class="card border-0 shadow-sm mb-4 experience-card">
-                  <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
-                      <h3 class="card-title h5 mb-0">Research Assistant</h3>
-                      <span class="experience-date">January 2024 – May 2024</span>
-                    </div>
-                    <p class="text-rust fw-medium mb-1">DLSU Engineering Laboratory</p>
-                    <p class="text-body-secondary">Assisted faculty in research projects related to machine learning applications in signal processing and data analysis.</p>
-                    <ul class="text-body-secondary small">
-                      <li>Conducted literature reviews on ML algorithms</li>
-                      <li>Implemented data preprocessing pipelines in Python</li>
-                      <li>Performed statistical analysis on experimental results</li>
-                      <li>Co-authored technical reports and documentation</li>
-                    </ul>
-                  </div>
-                </div>
-
+                <p class="text-rust fw-medium mb-1">TechVenture Solutions Inc.</p>
+                <p class="text-body-secondary">Worked as a summer intern in the hardware engineering department, contributing to the development of embedded systems for smart city applications.</p>
+                <ul class="text-body-secondary small">
+                  <li>Assisted in designing circuit boards for IoT sensor modules</li>
+                  <li>Programmed microcontrollers using C/C++ for sensor data collection</li>
+                  <li>Collaborated with senior engineers on system integration testing</li>
+                  <li>Documented technical specifications and testing procedures</li>
+                </ul>
               </div>
             </div>
+
+            <div class="card border-0 shadow-sm mb-4 experience-card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                  <h3 class="card-title h5 mb-0">Student Organization — Technical Lead</h3>
+                  <span class="experience-date">June 2024 – Present</span>
+                </div>
+                <p class="text-rust fw-medium mb-1">La Salle Computer Society</p>
+                <p class="text-body-secondary">Leading the technical team in organizing workshops, hackathons, and technical training sessions for students interested in computer engineering.</p>
+                <ul class="text-body-secondary small">
+                  <li>Organize technical workshops and seminars</li>
+                  <li>Coordinate with industry professionals for mentorship programs</li>
+                  <li>Plan and execute annual hackathon events</li>
+                  <li>Mentor junior members in their technical projects</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card border-0 shadow-sm mb-4 experience-card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                  <h3 class="card-title h5 mb-0">Research Assistant</h3>
+                  <span class="experience-date">January 2024 – May 2024</span>
+                </div>
+                <p class="text-rust fw-medium mb-1">DLSU Engineering Laboratory</p>
+                <p class="text-body-secondary">Assisted faculty in research projects related to machine learning applications in signal processing and data analysis.</p>
+                <ul class="text-body-secondary small">
+                  <li>Conducted literature reviews on ML algorithms</li>
+                  <li>Implemented data preprocessing pipelines in Python</li>
+                  <li>Performed statistical analysis on experimental results</li>
+                  <li>Co-authored technical reports and documentation</li>
+                </ul>
+              </div>
+            </div>
+
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
 
 
     <!-- ============================================================
-         EDUCATION (from education.html — full content)
-         FEATURE 2: Cards   FEATURE 4: Badges   FEATURE 5: Grid
+         EDUCATION (with coursework INSIDE the section)
          ============================================================ -->
     <section id="education" class="portfolio-section">
       <div class="container">
@@ -562,8 +556,6 @@
 
           </div>
         </div>
-      </div>
-    </section>
 
         <!-- Relevant Coursework -->
         <h3 class="h5 text-center mt-5 mb-4">Relevant Coursework</h3>
@@ -595,14 +587,6 @@
           <div class="col">
             <div class="card border-0 shadow-sm h-100">
               <div class="card-body text-center">
-                <p class="fw-bold mb-1">DATA100</p>
-                <p class="text-body-secondary small mb-0">Principles of Data Science</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card border-0 shadow-sm h-100">
-              <div class="card-body text-center">
                 <p class="fw-bold mb-1">LBYCPG3</p>
                 <p class="text-body-secondary small mb-0">Web Development</p>
               </div>
@@ -622,8 +606,7 @@
 
 
     <!-- ============================================================
-         REFERENCES (from references.html — full content)
-         FEATURE 2: Cards   FEATURE 5: Grid
+         REFERENCES
          ============================================================ -->
     <section id="references" class="portfolio-section section-alt">
       <div class="container">
@@ -690,7 +673,7 @@
 
 
     <!-- ============================================================
-         CONTACT — FEATURE 5: Grid   FEATURE 6: Tooltips
+         CONTACT
          ============================================================ -->
     <section id="contact" class="portfolio-section">
       <div class="container">
@@ -749,13 +732,16 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
   <footer class="py-4 border-top">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
       <p class="mb-0 text-body-secondary small">Built with Bootstrap 5. Hosted on Vercel.</p>
       <p class="mb-0 text-body-secondary small">Erin M. Quiazon &copy; 2026</p>
     </div>
   </footer>
+
 
   <!-- Greeting Dialog -->
   <div id="greeting-overlay" class="greeting-overlay">
@@ -766,6 +752,7 @@
       <button id="greeting-btn" class="btn btn-rust mt-3" onclick="closeGreeting()">Continue</button>
     </div>
   </div>
+
 
   <!-- Bootstrap 5 JS Bundle (CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
