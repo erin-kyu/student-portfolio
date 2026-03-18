@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erin Quiazon | Portfolio</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="icon" href="icon.png">
+    <style>
+
+        .navbar-custom {
+            background-color: var(--ink) !important;
+            padding: 0 60px;
+            min-height: 64px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .navbar-custom .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 0;
+        }
+        .navbar-custom .navbar-brand img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+        .navbar-custom .navbar-brand img:hover { opacity: 1; }
+        .navbar-custom .brand-text h1 {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: var(--sand);
+            letter-spacing: 0.01em;
+            line-height: 1.2;
+            margin: 0;
+        }
+        .navbar-custom .brand-text p {
+            font-size: 0.7rem;
+            color: var(--dust);
+            font-family: var(--mono);
+            letter-spacing: 0.04em;
+            margin: 0;
+        }
+        .navbar-custom .navbar-toggler {
+            border-color: rgba(255,255,255,0.2);
+            padding: 4px 10px;
+        }
+        .navbar-custom .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28242, 237, 230, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        .navbar-custom .navbar-nav .nav-link {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--dust) !important;
+            padding: 6px 14px !important;
+            border-radius: 3px;
+            transition: color 0.2s var(--ease), background 0.2s var(--ease);
+        }
+        .navbar-custom .navbar-nav .nav-link:hover {
+            color: var(--sand) !important;
+            background: rgba(255,255,255,0.06);
+        }
+        .navbar-custom .navbar-nav .nav-link.active {
+            color: var(--sand) !important;
+            background: rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 991px) {
+            .navbar-custom { padding: 14px 20px; }
+            .navbar-custom .navbar-collapse {
+                padding-top: 10px;
+            }
+            .navbar-custom .navbar-nav .nav-link {
+                font-size: 0.78rem;
+                padding: 8px 14px !important;
+            }
+        }
+        </style>
+</head>
+<body>
+    <div class="app-container">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/snoopy.jpg" alt="Logo">
+                <div class="brand-text">
+                    <h1>Erin M. Quiazon</h1>
+                    <p>Computer Engineering Student | Portfolio</p>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="works.html">Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="references.html">References</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="main-content home-content">
+            <section class="hero-section">
+                    <div class="hero-text">
+                        <p class="hero-greeting">Computer Engineering Student</p>
+                        <h1 class="hero-title">Erin M.<br>Quiazon<span class="highlight-text">— DLSU</span></h1>
+                        <p class="hero-subtitle">Third-year Computer Engineering student at DLSU, from Angeles City. Still figuring out which part of the field I want to be in — but enjoying the process, one web project and Excel sheet at a time.</p>
+                        
+                        <div class="hero-buttons">
+                            <a href="works.html" class="btn-primary">View My Projects</a>
+                            <a href="resume.html" class="btn-secondary">View Resume</a>
+                        </div>
+                        <div class="hero-social">
+                            <a href="/cdn-cgi/l/email-protection#4f2a3d2621103e3a262e3520210f2b233c3a612a2b3a613f27" class="social-link" title="Email">
+                                <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            </a>
+                            <a href="https://github.com" class="social-link" title="GitHub" target="_blank">
+                                <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image-container">
+                            <img src="img/picofme.jpg" alt="Erin M. Quiazon" class="hero-image">
+                        </div>
+                    </div>
+            </section>
+
+            <!-- Quick Stats Section -->
+            <section class="stats-section">
+                <div class="stat-card fade-in">
+                    <div class="stat-number">3rd</div>
+                    <div class="stat-label">Year Student</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Organizational Leadership Roles</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Technical Skills</div>
+                </div>
+            </section>
+
+            <!-- Clock Section (Exercise 2) -->
+            <section class="clock-section">
+                <div class="clock-inner">
+                    <p class="clock-label">Local Time</p>
+                    <div class="clock-display">
+                        <span id="clock-time">00:00:00</span>
+                        <span id="clock-ampm">AM</span>
+                    </div>
+                    <div id="clock-date"></div>
+                    <div id="clock-greeting"></div>
+                </div>
+            </section>
+
+            <!-- Featured Skills Section -->
+            <section class="featured-section">
+                <h2 class="section-title">What I Do</h2>
+                <div class="featured-grid">
+                    <div class="featured-card fade-in">
+                        <h3>Software Development</h3>
+                        <p>Building applications using modern programming languages and frameworks, focusing on clean code and best practices.</p>
+                    </div>
+                    <div class="featured-card fade-in">
+                        <h3>Hardware Engineering</h3>
+                        <p>Designing and implementing embedded systems, circuit boards, and IoT solutions for smart applications.</p>
+                    </div>
+                    <div class="featured-card fade-in">
+                        <h3>Data Analytics</h3>
+                        <p>Analyzing complex datasets and applying machine learning algorithms to extract meaningful insights.</p>
+                    </div>
+                    <div class="featured-card fade-in">
+                        <h3>Financial Technology</h3>
+                        <p>Bridging engineering and finance through risk analytics, financial modeling, and fintech applications.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="cta-section">
+                <div class="hero">
+                    <span class="hero-eyebrow">Contact</span>
+                    <h2>Let's Work Together</h2>
+                    
+                    <button class="btn-open" id="toggleBtn" aria-expanded="false" aria-controls="formPanel">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"/>
+                            <line x1="5" y1="12" x2="19" y2="12"/>
+                        </svg>
+                        Send a Message
+                    </button>
+                </div>
+
+                <div class="form-panel" id="formPanel" aria-hidden="true">
+                    <div class="form-inner">
+                        <form
+                            action="https://formsubmit.co/erin_quiazon@dlsu.edu.ph"
+                            method="POST"
+                            id="contactForm"
+                            novalidate
+                        >
+                            <input type="hidden" name="_subject" value="New Message from Portfolio — Erin Quiazon" />
+                            <input type="hidden" name="_captcha" value="false" />
+                            <input type="hidden" name="_template" value="table" />
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" />
+                                    <span class="field-error" id="nameErr">Please enter your name (at least 2 characters).</span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" />
+                                    <span class="field-error" id="emailErr">Please enter a valid email address.</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="What's this about?" />
+                                <span class="field-error" id="subjectErr">Please add a subject (at least 3 characters).</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Tell me more..."></textarea>
+                                <span class="field-error" id="messageErr">Please write a message (at least 10 characters).</span>
+                            </div>
+
+                            <button type="submit" class="btn-submit" id="submitBtn">Send Message</button>
+                            <div class="status-msg" id="statusMsg"></div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Greeting Dialog (Exercise 2) -->
+    <div id="greeting-overlay">
+        <div id="greeting-dialog">
+            <span id="greeting-emoji"></span>
+            <div id="greeting-title"></div>
+            <div id="greeting-sub"></div>
+            <button id="greeting-btn" onclick="closeGreeting()">Continue</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap 4 JS dependencies (jQuery, Popper.js, Bootstrap JS) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/app.js"></script>
+    <script src="js/contact.js"></script>
+    <script>
+        // ── Exercise 3: Scroll Fade-In Animation ────────────────
+        // Uses IntersectionObserver to trigger .visible when elements enter viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    // Remove so it re-animates when scrolling back up
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in, .section-title').forEach(el => observer.observe(el));
+
+        /* ── Module 3 Exercise 2 ── */
+
+        const greetings = [
+            { range: [5,  11], title: "Good Morning!",  sub: "Hope your day is off to a great start.", emoji: "☀️",  icon: "Morning" },
+            { range: [12, 16], title: "Good Afternoon!", sub: "Hope you're having a productive day.", emoji: "🌤️", icon: "Afternoon" },
+            { range: [17, 20], title: "Good Evening!",  sub: "The day is winding down — take it easy.", emoji: "🌇", icon: "Evening" },
+            { range: [21, 23], title: "Good Night!",    sub: "Don't stay up too late — rest up!", emoji: "🌙", icon: "Night" },
+            { range: [0,  4],  title: "Still Awake?",   sub: "It's late! Get some rest when you can.", emoji: "🦉",  icon: "Late" }
+        ];
+
+        function getGreeting() {
+            const hour = new Date().getHours();
+            return greetings.find(g => hour >= g.range[0] && hour <= g.range[1]);
+        }
+
+        window.addEventListener('load', function() {
+            const g = getGreeting();
+            document.getElementById('greeting-emoji').textContent = g.emoji;
+            document.getElementById('greeting-title').textContent = g.title;
+            document.getElementById('greeting-sub').textContent   = g.sub;
+            document.getElementById('clock-greeting').textContent = g.title;
+        });
+
+        function closeGreeting() {
+            document.getElementById('greeting-overlay').style.display = 'none';
+        }
+
+        // Live clock
+        function updateClock() {
+            const now  = new Date();
+            let   h    = now.getHours();
+            const m    = String(now.getMinutes()).padStart(2, '0');
+            const s    = String(now.getSeconds()).padStart(2, '0');
+            const ampm = h >= 12 ? 'PM' : 'AM';
+            h = h % 12 || 12;
+
+            document.getElementById('clock-time').textContent = `${String(h).padStart(2,'0')}:${m}:${s}`;
+            document.getElementById('clock-ampm').textContent = ampm;
+
+            const days   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+            const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+            document.getElementById('clock-date').textContent =
+                    `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
