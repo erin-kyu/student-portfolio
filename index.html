@@ -1,342 +1,778 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-bs-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erin Quiazon | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portfolio of Erin M. Quiazon, a third-year Computer Engineering student at De La Salle University.">
+  <title>Erin M. Quiazon | Portfolio</title>
+  <link rel="icon" href="assets/images/icon.png">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="icon" href="icon.png">
-    <style>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        .navbar-custom {
-            background-color: var(--ink) !important;
-            padding: 0 60px;
-            min-height: 64px;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-        }
-        .navbar-custom .navbar-brand {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 0;
-        }
-        .navbar-custom .navbar-brand img {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            object-fit: cover;
-            opacity: 0.9;
-        }
-        .navbar-custom .navbar-brand img:hover { opacity: 1; }
-        .navbar-custom .brand-text h1 {
-            font-family: var(--serif);
-            font-size: 1.05rem;
-            font-weight: 400;
-            color: var(--sand);
-            letter-spacing: 0.01em;
-            line-height: 1.2;
-            margin: 0;
-        }
-        .navbar-custom .brand-text p {
-            font-size: 0.7rem;
-            color: var(--dust);
-            font-family: var(--mono);
-            letter-spacing: 0.04em;
-            margin: 0;
-        }
-        .navbar-custom .navbar-toggler {
-            border-color: rgba(255,255,255,0.2);
-            padding: 4px 10px;
-        }
-        .navbar-custom .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28242, 237, 230, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-        .navbar-custom .navbar-nav .nav-link {
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--dust) !important;
-            padding: 6px 14px !important;
-            border-radius: 3px;
-            transition: color 0.2s var(--ease), background 0.2s var(--ease);
-        }
-        .navbar-custom .navbar-nav .nav-link:hover {
-            color: var(--sand) !important;
-            background: rgba(255,255,255,0.06);
-        }
-        .navbar-custom .navbar-nav .nav-link.active {
-            color: var(--sand) !important;
-            background: rgba(255,255,255,0.1);
-        }
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-        @media (max-width: 991px) {
-            .navbar-custom { padding: 14px 20px; }
-            .navbar-custom .navbar-collapse {
-                padding-top: 10px;
-            }
-            .navbar-custom .navbar-nav .nav-link {
-                font-size: 0.78rem;
-                padding: 8px 14px !important;
-            }
-        }
-        </style>
+  <!-- Bootstrap 5.3 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous">
+
+  <!-- Custom overrides -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div class="app-container">
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
-            <a class="navbar-brand" href="index.html">
-                <img src="img/snoopy.jpg" alt="Logo">
-                <div class="brand-text">
-                    <h1>Erin M. Quiazon</h1>
-                    <p>Computer Engineering Student | Portfolio</p>
-                </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarMain">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="works.html">Works</a></li>
-                    <li class="nav-item"><a class="nav-link" href="experience.html">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="references.html">References</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                </ul>
-            </div>
-        </nav>
 
-        <main class="main-content home-content">
-            <section class="hero-section">
-                    <div class="hero-text">
-                        <p class="hero-greeting">Computer Engineering Student</p>
-                        <h1 class="hero-title">Erin M.<br>Quiazon<span class="highlight-text">— DLSU</span></h1>
-                        <p class="hero-subtitle">Third-year Computer Engineering student at DLSU, from Angeles City. Still figuring out which part of the field I want to be in — but enjoying the process, one web project and Excel sheet at a time.</p>
-                        
-                        <div class="hero-buttons">
-                            <a href="works.html" class="btn-primary">View My Projects</a>
-                            <a href="resume.html" class="btn-secondary">View Resume</a>
-                        </div>
-                        <div class="hero-social">
-                            <a href="/cdn-cgi/l/email-protection#4f2a3d2621103e3a262e3520210f2b233c3a612a2b3a613f27" class="social-link" title="Email">
-                                <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                            </a>
-                            <a href="https://github.com" class="social-link" title="GitHub" target="_blank">
-                                <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="hero-image-wrapper">
-                        <div class="hero-image-container">
-                            <img src="img/picofme.jpg" alt="Erin M. Quiazon" class="hero-image">
-                        </div>
-                    </div>
-            </section>
+<body data-bs-spy="scroll" data-bs-target="#navbarMain" data-bs-offset="80">
 
-            <!-- Quick Stats Section -->
-            <section class="stats-section">
-                <div class="stat-card fade-in">
-                    <div class="stat-number">3rd</div>
-                    <div class="stat-label">Year Student</div>
-                </div>
-                <div class="stat-card fade-in">
-                    <div class="stat-number">5+</div>
-                    <div class="stat-label">Projects Completed</div>
-                </div>
-                <div class="stat-card fade-in">
-                    <div class="stat-number">2+</div>
-                    <div class="stat-label">Organizational Leadership Roles</div>
-                </div>
-                <div class="stat-card fade-in">
-                    <div class="stat-number">10+</div>
-                    <div class="stat-label">Technical Skills</div>
-                </div>
-            </section>
-
-            <!-- Clock Section (Exercise 2) -->
-            <section class="clock-section">
-                <div class="clock-inner">
-                    <p class="clock-label">Local Time</p>
-                    <div class="clock-display">
-                        <span id="clock-time">00:00:00</span>
-                        <span id="clock-ampm">AM</span>
-                    </div>
-                    <div id="clock-date"></div>
-                    <div id="clock-greeting"></div>
-                </div>
-            </section>
-
-            <!-- Featured Skills Section -->
-            <section class="featured-section">
-                <h2 class="section-title">What I Do</h2>
-                <div class="featured-grid">
-                    <div class="featured-card fade-in">
-                        <h3>Software Development</h3>
-                        <p>Building applications using modern programming languages and frameworks, focusing on clean code and best practices.</p>
-                    </div>
-                    <div class="featured-card fade-in">
-                        <h3>Hardware Engineering</h3>
-                        <p>Designing and implementing embedded systems, circuit boards, and IoT solutions for smart applications.</p>
-                    </div>
-                    <div class="featured-card fade-in">
-                        <h3>Data Analytics</h3>
-                        <p>Analyzing complex datasets and applying machine learning algorithms to extract meaningful insights.</p>
-                    </div>
-                    <div class="featured-card fade-in">
-                        <h3>Financial Technology</h3>
-                        <p>Bridging engineering and finance through risk analytics, financial modeling, and fintech applications.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section class="cta-section">
-                <div class="hero">
-                    <span class="hero-eyebrow">Contact</span>
-                    <h2>Let's Work Together</h2>
-                    
-                    <button class="btn-open" id="toggleBtn" aria-expanded="false" aria-controls="formPanel">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                             stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="12" y1="5" x2="12" y2="19"/>
-                            <line x1="5" y1="12" x2="19" y2="12"/>
-                        </svg>
-                        Send a Message
-                    </button>
-                </div>
-
-                <div class="form-panel" id="formPanel" aria-hidden="true">
-                    <div class="form-inner">
-                        <form
-                            action="https://formsubmit.co/erin_quiazon@dlsu.edu.ph"
-                            method="POST"
-                            id="contactForm"
-                            novalidate
-                        >
-                            <input type="hidden" name="_subject" value="New Message from Portfolio — Erin Quiazon" />
-                            <input type="hidden" name="_captcha" value="false" />
-                            <input type="hidden" name="_template" value="table" />
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" />
-                                    <span class="field-error" id="nameErr">Please enter your name (at least 2 characters).</span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" />
-                                    <span class="field-error" id="emailErr">Please enter a valid email address.</span>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" placeholder="What's this about?" />
-                                <span class="field-error" id="subjectErr">Please add a subject (at least 3 characters).</span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Tell me more..."></textarea>
-                                <span class="field-error" id="messageErr">Please write a message (at least 10 characters).</span>
-                            </div>
-
-                            <button type="submit" class="btn-submit" id="submitBtn">Send Message</button>
-                            <div class="status-msg" id="statusMsg"></div>
-                        </form>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
-    <!-- Greeting Dialog (Exercise 2) -->
-    <div id="greeting-overlay">
-        <div id="greeting-dialog">
-            <span id="greeting-emoji"></span>
-            <div id="greeting-title"></div>
-            <div id="greeting-sub"></div>
-            <button id="greeting-btn" onclick="closeGreeting()">Continue</button>
+  <!-- ============================================================
+       FEATURE 1: BOOTSTRAP NAVBAR
+       .navbar-expand-lg, .sticky-top, collapse toggle, data-bs-*
+       ============================================================ -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
+        <img src="assets/images/snoopy.jpg" alt="Site logo" class="brand-logo" width="36" height="36">
+        <div class="brand-text">
+          <span class="brand-name">Erin M. Quiazon</span>
+          <span class="brand-sub">Computer Engineering Student</span>
         </div>
+      </a>
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarMain"
+        aria-controls="navbarMain" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#references">References</a></li>
+          <li class="nav-item">
+            <a class="nav-link btn-contact-nav ms-lg-2 px-3" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <button id="theme-toggle" class="btn btn-sm btn-outline-light ms-lg-2">Dark Mode</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         HERO SECTION
+         FEATURE 5: Grid (.row, .col-lg-7, .col-lg-5)
+         FEATURE 6: Tooltips on social icons
+         ============================================================ -->
+    <section id="hero" class="d-flex align-items-center min-vh-100">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-7">
+            <p class="hero-eyebrow">Computer Engineering Student</p>
+            <h1 class="hero-title">Erin M.<br>Quiazon<span class="hero-highlight"> — DLSU</span></h1>
+            <p class="hero-subtitle">Third-year Computer Engineering student at DLSU, from Angeles City. Still figuring out which part of the field I want to be in — but enjoying the process, one web project and Excel sheet at a time.</p>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a href="#projects" class="btn btn-rust btn-lg px-4">View My Projects</a>
+              <a href="#contact" class="btn btn-outline-dark btn-lg px-4">Get in Touch</a>
+            </div>
+            <div class="d-flex gap-3 mt-4">
+              <a href="mailto:erin_quiazon@dlsu.edu.ph" class="social-link"
+                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Send me an email"
+                aria-label="Send email"><i class="bi bi-envelope-fill fs-5"></i></a>
+              <a href="https://github.com/erin-kyu" class="social-link"
+                target="_blank" rel="noopener noreferrer"
+                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Visit my GitHub"
+                aria-label="GitHub profile"><i class="bi bi-github fs-5"></i></a>
+              <a href="https://linkedin.com/in/" class="social-link"
+                target="_blank" rel="noopener noreferrer"
+                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Connect on LinkedIn"
+                aria-label="LinkedIn profile"><i class="bi bi-linkedin fs-5"></i></a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5 text-center">
+            <div class="hero-image-wrapper">
+              <img src="assets/images/picofme.jpg" alt="Portrait photo of Erin M. Quiazon" class="img-fluid hero-portrait">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         STATS — FEATURE 5: Grid
+         ============================================================ -->
+    <section id="stats" class="stats-section">
+      <div class="container">
+        <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
+          <div class="col">
+            <div class="stat-card"><span class="stat-number">3rd</span><span class="stat-label">Year Student</span></div>
+          </div>
+          <div class="col">
+            <div class="stat-card"><span class="stat-number">5+</span><span class="stat-label">Projects Completed</span></div>
+          </div>
+          <div class="col">
+            <div class="stat-card"><span class="stat-number">2+</span><span class="stat-label">Leadership Roles</span></div>
+          </div>
+          <div class="col">
+            <div class="stat-card"><span class="stat-number">10+</span><span class="stat-label">Technical Skills</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         CLOCK SECTION (from original homepage)
+         ============================================================ -->
+    <section id="clock" class="clock-section">
+      <div class="container text-center">
+        <p class="clock-label">Local Time</p>
+        <div class="clock-display">
+          <span id="clock-time">00:00:00</span>
+          <span id="clock-ampm">AM</span>
+        </div>
+        <div id="clock-date" class="clock-date"></div>
+        <div id="clock-greeting" class="clock-greeting"></div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         ABOUT SECTION (from about.html — full content)
+         FEATURE 4: Badges   FEATURE 5: Grid   FEATURE 6: Tooltips
+         ============================================================ -->
+    <section id="about" class="portfolio-section section-alt">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-md-4 text-center">
+            <img src="assets/images/resumepic.jpg" alt="Profile photo of Erin M. Quiazon"
+              class="img-fluid rounded-circle shadow avatar-img" width="260" height="260">
+          </div>
+          <div class="col-12 col-md-8">
+            <h2 class="section-heading mb-4">About Me</h2>
+            <p class="lead">I'm Erin, a third-year Computer Engineering student at De La Salle University from Angeles City, Pampanga. I originally set out to study Computer Science, but ended up in CpE — and honestly, it's grown on me. It's pushed me in ways I didn't expect, even if I'm still figuring out which corner of the field I want to eventually land in.</p>
+            <p>Outside of school, I spend a lot of time commuting around Manila just to see where things lead — different neighborhoods, different food, different energy. I also watch movies alone at the cinema, cook, read, and do sudoku. I like my own company, and I like observing things.</p>
+
+            <h3 class="h6 fw-semibold mt-4 mb-2">My Skills</h3>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge badge-skill-primary" data-bs-toggle="tooltip" title="Used in data analysis and automation">Python</span>
+              <span class="badge badge-skill-primary" data-bs-toggle="tooltip" title="Used in data structures and embedded systems">C / C++</span>
+              <span class="badge badge-skill-primary" data-bs-toggle="tooltip" title="Core web development languages">HTML &amp; CSS</span>
+              <span class="badge badge-skill-primary" data-bs-toggle="tooltip" title="Frontend scripting and DOM manipulation">JavaScript</span>
+              <span class="badge badge-skill-secondary" data-bs-toggle="tooltip" title="Financial modeling and risk analytics">Data Analysis</span>
+              <span class="badge badge-skill-secondary" data-bs-toggle="tooltip" title="Spreadsheets, pivot tables, and VBA">Microsoft Excel</span>
+              <span class="badge badge-skill-secondary" data-bs-toggle="tooltip" title="Schematic design and simulation">Circuit Design</span>
+              <span class="badge badge-skill-secondary" data-bs-toggle="tooltip" title="Full-stack HTML/CSS/JS/PHP projects">Web Development</span>
+            </div>
+
+            <h3 class="h6 fw-semibold mt-4 mb-2">Interests &amp; Hobbies</h3>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="badge badge-interest">Web Development</span>
+              <span class="badge badge-interest">Data &amp; Excel</span>
+              <span class="badge badge-interest">Solo Cinema</span>
+              <span class="badge badge-interest">Cooking</span>
+              <span class="badge badge-interest">Reading</span>
+              <span class="badge badge-interest">Sudoku</span>
+              <span class="badge badge-interest">Exploring Manila</span>
+            </div>
+
+            <h3 class="h6 fw-semibold mt-4 mb-2">Where I'm Headed</h3>
+            <p>I'm pursuing a minor in Financial Risk and Analytics — less because I've fully merged it with my engineering work, and more because I find value in understanding how data informs decisions, especially financial ones. Right now, what I enjoy most is working with data in Excel and building things for the web, even if I'm still early in both.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         WHAT I DO — FEATURE 2: Cards + FEATURE 5: Grid
+         ============================================================ -->
+    <section id="interests" class="portfolio-section">
+      <div class="container">
+        <h2 class="section-heading text-center mb-5">What I Do</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm interest-card">
+              <div class="card-body text-center">
+                <i class="bi bi-code-slash fs-1 text-rust mb-3"></i>
+                <h3 class="card-title h5">Software Development</h3>
+                <p class="card-text text-body-secondary">Building applications using modern programming languages and frameworks, focusing on clean code and best practices.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm interest-card">
+              <div class="card-body text-center">
+                <i class="bi bi-cpu fs-1 text-rust mb-3"></i>
+                <h3 class="card-title h5">Hardware Engineering</h3>
+                <p class="card-text text-body-secondary">Designing and implementing embedded systems, circuit boards, and IoT solutions for smart applications.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm interest-card">
+              <div class="card-body text-center">
+                <i class="bi bi-bar-chart-line fs-1 text-rust mb-3"></i>
+                <h3 class="card-title h5">Data Analytics</h3>
+                <p class="card-text text-body-secondary">Analyzing complex datasets and applying machine learning algorithms to extract meaningful insights.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm interest-card">
+              <div class="card-body text-center">
+                <i class="bi bi-currency-exchange fs-1 text-rust mb-3"></i>
+                <h3 class="card-title h5">Financial Technology</h3>
+                <p class="card-text text-body-secondary">Bridging engineering and finance through risk analytics, financial modeling, and fintech applications.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         PROJECTS — FEATURE 2: Cards  FEATURE 3: Modals
+         FEATURE 4: Badges  FEATURE 5: Grid
+         ============================================================ -->
+    <section id="projects" class="portfolio-section section-alt">
+      <div class="container">
+        <h2 class="section-heading text-center mb-2">Projects</h2>
+        <p class="text-center text-body-secondary mb-5">Academic projects and learning experiences. Click any card for full details.</p>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+          <!-- Card 1: Portfolio Website -->
+          <div class="col">
+            <article class="card h-100 shadow-sm border-0 project-card"
+              role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#projectModal1">
+              <img src="assets/images/portfolio-home-screenshot.png" class="card-img-top"
+                alt="Screenshot of personal portfolio website homepage" loading="lazy" width="400" height="200">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h3 class="card-title h5 mb-0">Personal Portfolio Website</h3>
+                  <span class="badge bg-success">Completed</span>
+                </div>
+                <p class="card-text text-body-secondary flex-grow-1">Designed and developed a responsive portfolio website using HTML, CSS, and JavaScript with modern layout techniques.</p>
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge bg-primary-subtle text-primary-emphasis">HTML</span>
+                  <span class="badge bg-secondary-subtle text-secondary-emphasis">CSS</span>
+                  <span class="badge bg-success-subtle text-success-emphasis">JavaScript</span>
+                </div>
+                <div class="mt-auto"><small class="text-body-secondary"><i class="bi bi-hand-index me-1"></i>Click for details</small></div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2: Financial Technology -->
+          <div class="col">
+            <article class="card h-100 shadow-sm border-0 project-card"
+              role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#projectModal2">
+              <img src="assets/images/excel.png" class="card-img-top"
+                alt="Screenshot of Excel spreadsheet for financial data analysis" loading="lazy" width="400" height="200">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h3 class="card-title h5 mb-0">Financial Technology &amp; Excel</h3>
+                  <span class="badge bg-success">Completed</span>
+                </div>
+                <p class="card-text text-body-secondary flex-grow-1">Working with Excel for data analysis, financial modeling, and risk analytics as part of my FinRisk minor.</p>
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge bg-primary-subtle text-primary-emphasis">Excel</span>
+                  <span class="badge bg-secondary-subtle text-secondary-emphasis">Data Analysis</span>
+                  <span class="badge bg-success-subtle text-success-emphasis">FinTech</span>
+                </div>
+                <div class="mt-auto"><small class="text-body-secondary"><i class="bi bi-hand-index me-1"></i>Click for details</small></div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3: Data Structures -->
+          <div class="col">
+            <article class="card h-100 shadow-sm border-0 project-card"
+              role="button" tabindex="0" data-bs-toggle="modal" data-bs-target="#projectModal3">
+              <img src="assets/images/vscode.png" class="card-img-top"
+                alt="Screenshot of VS Code editor showing C++ data structures code" loading="lazy" width="400" height="200">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                  <h3 class="card-title h5 mb-0">Data Structures &amp; Algorithms</h3>
+                  <span class="badge bg-success">Completed</span>
+                </div>
+                <p class="card-text text-body-secondary flex-grow-1">Implemented fundamental data structures including linked lists, stacks, queues, trees, and graphs in C++.</p>
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                  <span class="badge bg-primary-subtle text-primary-emphasis">C++</span>
+                  <span class="badge bg-secondary-subtle text-secondary-emphasis">Algorithms</span>
+                  <span class="badge bg-success-subtle text-success-emphasis">Problem Solving</span>
+                </div>
+                <div class="mt-auto"><small class="text-body-secondary"><i class="bi bi-hand-index me-1"></i>Click for details</small></div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT MODALS (FEATURE 3) -->
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="projectModal1Label">Personal Portfolio Website</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="assets/images/portfolio-home-screenshot.png" class="img-fluid rounded mb-4" alt="Full screenshot of portfolio website">
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge bg-success">Completed</span>
+              <span class="badge bg-body-secondary">Term 8, January 2026</span>
+              <span class="badge bg-body-secondary">LBYCPG3 — Web Development</span>
+            </div>
+            <p>Designed and developed this portfolio website using HTML, CSS, and modern CSS Grid/Flexbox layout structure. The site showcases my academic journey, skills, and experiences in an organized and visually appealing manner. Implemented responsive design principles and modern CSS techniques including gradients and animations.</p>
+            <p class="fw-medium mb-2">Technologies used:</p>
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge bg-primary-subtle text-primary-emphasis">HTML</span>
+              <span class="badge bg-primary-subtle text-primary-emphasis">CSS</span>
+              <span class="badge bg-primary-subtle text-primary-emphasis">JavaScript</span>
+              <span class="badge bg-secondary-subtle text-secondary-emphasis">Web Design</span>
+              <span class="badge bg-secondary-subtle text-secondary-emphasis">Responsive Layout</span>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="https://erin-kyu.github.io/my-website-portfolio/" class="btn btn-rust" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i>Live Demo</a>
+            <a href="https://github.com/erin-kyu/my-website-portfolio" class="btn btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="bi bi-github me-1"></i>Source Code</a>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Bootstrap 4 JS dependencies (jQuery, Popper.js, Bootstrap JS) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="projectModal2Label">Financial Technology &amp; Excel</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="assets/images/excel.png" class="img-fluid rounded mb-4" alt="Full screenshot of Excel financial analysis">
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge bg-success">Completed</span>
+              <span class="badge bg-body-secondary">FINRISD / FMDFINA</span>
+              <span class="badge bg-body-secondary">Financial Risk &amp; Analytics Minor</span>
+            </div>
+            <p>Working with Excel for data analysis and financial modeling as part of my minor in Financial Risk and Analytics. Projects include bond valuation, duration/convexity analysis, CAPM modeling, and gap analysis for market risk assessment.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/app.js"></script>
-    <script src="js/contact.js"></script>
-    <script>
-        // ── Exercise 3: Scroll Fade-In Animation ────────────────
-        // Uses IntersectionObserver to trigger .visible when elements enter viewport
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                } else {
-                    // Remove so it re-animates when scrolling back up
-                    entry.target.classList.remove('visible');
-                }
-            });
-        }, { threshold: 0.15 });
+    <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModal3Label" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="projectModal3Label">Data Structures &amp; Algorithms</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="assets/images/vscode.png" class="img-fluid rounded mb-4" alt="Full screenshot of VS Code with C++ code">
+            <div class="d-flex flex-wrap gap-2 mb-3">
+              <span class="badge bg-success">Completed</span>
+              <span class="badge bg-body-secondary">Term 2, 2024</span>
+              <span class="badge bg-body-secondary">Data Structures &amp; Algorithms</span>
+            </div>
+            <p>Implemented fundamental data structures including linked lists, stacks, queues, trees, and graphs in C++. Completed programming assignments focusing on algorithm efficiency and optimization. Analyzed time and space complexity for various operations.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        document.querySelectorAll('.fade-in, .section-title').forEach(el => observer.observe(el));
 
-        /* ── Module 3 Exercise 2 ── */
+    <!-- ============================================================
+         SKILLS — FEATURE 5: Grid, Progress bars with ARIA
+         ============================================================ -->
+    <section id="skills" class="portfolio-section">
+      <div class="container">
+        <h2 class="section-heading text-center mb-5">Skills</h2>
+        <div class="row g-5 justify-content-center">
+          <div class="col-12 col-md-6 col-lg-5">
+            <h3 class="h5 mb-4 skill-column-title">Languages</h3>
+            <div class="mb-4">
+              <div class="d-flex justify-content-between mb-1"><span class="fw-medium">HTML &amp; CSS</span><span class="text-body-secondary small">90%</span></div>
+              <div class="progress" role="progressbar" aria-label="HTML and CSS skill level" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 90%"></div></div>
+            </div>
+            <div class="mb-4">
+              <div class="d-flex justify-content-between mb-1"><span class="fw-medium">JavaScript</span><span class="text-body-secondary small">75%</span></div>
+              <div class="progress" role="progressbar" aria-label="JavaScript skill level" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 75%"></div></div>
+            </div>
+            <div class="mb-4">
+              <div class="d-flex justify-content-between mb-1"><span class="fw-medium">Python</span><span class="text-body-secondary small">70%</span></div>
+              <div class="progress" role="progressbar" aria-label="Python skill level" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 70%"></div></div>
+            </div>
+            <div class="mb-4">
+              <div class="d-flex justify-content-between mb-1"><span class="fw-medium">C / C++</span><span class="text-body-secondary small">65%</span></div>
+              <div class="progress" role="progressbar" aria-label="C and C++ skill level" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 65%"></div></div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-5">
+            <h3 class="h5 mb-4 skill-column-title">Tools &amp; Frameworks</h3>
+            <div class="mb-4">
+              <div class="d-flex justify-content-between mb-1"><span class="fw-medium">Microsoft Excel</span><span class="text-body-secondary small">85%</span></div>
+              <div class="progress" role="progressbar" aria-label="Microsoft Excel skill level" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar progress-bar-secondary" style="width: 85%"></div></div>
+            </div>
+            <div class="mb-4">
+              <div class="d-flex justify-content-between mb-1"><span class="fw-medium">Web Development</span><span class="text-body-secondary small">80%</span></div>
+              <div class="progress" role="progressbar" aria-label="Web Development skill level" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar progress-bar-secondary" style="width: 80%"></div></div>
+            </div>
+            <div class="mb-4">
+              <div class="d-flex justify-content-between mb-1"><span class="fw-medium">Data Analysis</span><span class="text-body-secondary small">70%</span></div>
+              <div class="progress" role="progressbar" aria-label="Data Analysis skill level" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar progress-bar-secondary" style="width: 70%"></div></div>
+            </div>
+            <div class="mb-4">
+              <div class="d-flex justify-content-between mb-1"><span class="fw-medium">Git &amp; GitHub</span><span class="text-body-secondary small">65%</span></div>
+              <div class="progress" role="progressbar" aria-label="Git and GitHub skill level" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar progress-bar-secondary" style="width: 65%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        const greetings = [
-            { range: [5,  11], title: "Good Morning!",  sub: "Hope your day is off to a great start.", emoji: "☀️",  icon: "Morning" },
-            { range: [12, 16], title: "Good Afternoon!", sub: "Hope you're having a productive day.", emoji: "🌤️", icon: "Afternoon" },
-            { range: [17, 20], title: "Good Evening!",  sub: "The day is winding down — take it easy.", emoji: "🌇", icon: "Evening" },
-            { range: [21, 23], title: "Good Night!",    sub: "Don't stay up too late — rest up!", emoji: "🌙", icon: "Night" },
-            { range: [0,  4],  title: "Still Awake?",   sub: "It's late! Get some rest when you can.", emoji: "🦉",  icon: "Late" }
-        ];
 
-        function getGreeting() {
-            const hour = new Date().getHours();
-            return greetings.find(g => hour >= g.range[0] && hour <= g.range[1]);
-        }
+    <!-- ============================================================
+         EXPERIENCE (from experience.html — full timeline)
+         FEATURE 2: Cards   FEATURE 4: Badges   FEATURE 5: Grid
+         ============================================================ -->
+    <section id="experience" class="portfolio-section section-alt">
+      <div class="container">
+        <h2 class="section-heading text-center mb-2">Experience</h2>
+        <p class="text-center text-body-secondary mb-5"><em>DISCLAIMER: This portion of the portfolio is a work in progress and contains non-factual data at the moment.</em></p>
 
-        window.addEventListener('load', function() {
-            const g = getGreeting();
-            document.getElementById('greeting-emoji').textContent = g.emoji;
-            document.getElementById('greeting-title').textContent = g.title;
-            document.getElementById('greeting-sub').textContent   = g.sub;
-            document.getElementById('clock-greeting').textContent = g.title;
-        });
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
 
-        function closeGreeting() {
-            document.getElementById('greeting-overlay').style.display = 'none';
-        }
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                  <h3 class="card-title h5 mb-0">Engineering Intern</h3>
+                  <span class="badge bg-body-secondary">June 2025 – August 2025</span>
+                </div>
+                <p class="text-rust fw-medium mb-1">TechVenture Solutions Inc.</p>
+                <p class="text-body-secondary">Worked as a summer intern in the hardware engineering department, contributing to the development of embedded systems for smart city applications.</p>
+                <ul class="text-body-secondary small">
+                  <li>Assisted in designing circuit boards for IoT sensor modules</li>
+                  <li>Programmed microcontrollers using C/C++ for sensor data collection</li>
+                  <li>Collaborated with senior engineers on system integration testing</li>
+                  <li>Documented technical specifications and testing procedures</li>
+                </ul>
+              </div>
+            </div>
 
-        // Live clock
-        function updateClock() {
-            const now  = new Date();
-            let   h    = now.getHours();
-            const m    = String(now.getMinutes()).padStart(2, '0');
-            const s    = String(now.getSeconds()).padStart(2, '0');
-            const ampm = h >= 12 ? 'PM' : 'AM';
-            h = h % 12 || 12;
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                  <h3 class="card-title h5 mb-0">Student Organization — Technical Lead</h3>
+                  <span class="badge bg-body-secondary">June 2024 – Present</span>
+                </div>
+                <p class="text-rust fw-medium mb-1">La Salle Computer Society</p>
+                <p class="text-body-secondary">Leading the technical team in organizing workshops, hackathons, and technical training sessions for students interested in computer engineering.</p>
+                <ul class="text-body-secondary small">
+                  <li>Organize technical workshops and seminars</li>
+                  <li>Coordinate with industry professionals for mentorship programs</li>
+                  <li>Plan and execute annual hackathon events</li>
+                  <li>Mentor junior members in their technical projects</li>
+                </ul>
+              </div>
+            </div>
 
-            document.getElementById('clock-time').textContent = `${String(h).padStart(2,'0')}:${m}:${s}`;
-            document.getElementById('clock-ampm').textContent = ampm;
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                  <h3 class="card-title h5 mb-0">Research Assistant</h3>
+                  <span class="badge bg-body-secondary">January 2024 – May 2024</span>
+                </div>
+                <p class="text-rust fw-medium mb-1">DLSU Engineering Laboratory</p>
+                <p class="text-body-secondary">Assisted faculty in research projects related to machine learning applications in signal processing and data analysis.</p>
+                <ul class="text-body-secondary small">
+                  <li>Conducted literature reviews on ML algorithms</li>
+                  <li>Implemented data preprocessing pipelines in Python</li>
+                  <li>Performed statistical analysis on experimental results</li>
+                  <li>Co-authored technical reports and documentation</li>
+                </ul>
+              </div>
+            </div>
 
-            const days   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-            const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-            document.getElementById('clock-date').textContent =
-                    `${days[now.getDay()]}, ${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
-        }
+          </div>
+        </div>
+      </div>
+    </section>
 
-        updateClock();
-        setInterval(updateClock, 1000);
-    </script>
+
+    <!-- ============================================================
+         EDUCATION (from education.html — full content)
+         FEATURE 2: Cards   FEATURE 4: Badges   FEATURE 5: Grid
+         ============================================================ -->
+    <section id="education" class="portfolio-section">
+      <div class="container">
+        <h2 class="section-heading text-center mb-5">Education</h2>
+
+        <div class="row justify-content-center g-4">
+          <div class="col-12 col-lg-8">
+
+            <!-- DLSU -->
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                  <h3 class="card-title h5 mb-0">Bachelor of Science in Computer Engineering</h3>
+                  <span class="badge bg-warning text-dark">2023 – 2027 (Expected)</span>
+                </div>
+                <p class="text-rust fw-medium mb-1">De La Salle University — Manila, Philippines</p>
+                <p class="text-body-secondary mb-1"><strong>Minor:</strong> Financial Risk and Analytics</p>
+                <p class="text-body-secondary mb-1"><strong>Current Year:</strong> Third Year</p>
+                <p class="text-body-secondary"><strong>Focus Areas:</strong> Embedded Systems, IoT, Financial Technology, Machine Learning, Web Development</p>
+              </div>
+            </div>
+
+            <!-- Holy Angel -->
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
+                  <h3 class="card-title h5 mb-0">Senior High School — STEM Track</h3>
+                  <span class="badge bg-success">2022 – 2023</span>
+                </div>
+                <p class="text-rust fw-medium mb-1">Holy Angel University — Pampanga, Philippines</p>
+                <p class="text-body-secondary"><strong>Academic Track:</strong> Science, Technology, Engineering, and Mathematics (STEM)</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Relevant Coursework -->
+        <h3 class="h5 text-center mt-5 mb-4">Relevant Coursework</h3>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 justify-content-center">
+          <div class="col">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body text-center">
+                <p class="fw-bold mb-1">FMDFINA</p>
+                <p class="text-body-secondary small mb-0">Fundamentals of Financial Management</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body text-center">
+                <p class="fw-bold mb-1">FINRISD</p>
+                <p class="text-body-secondary small mb-0">Financial Risk and Analysis</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body text-center">
+                <p class="fw-bold mb-1">LOGDSGN</p>
+                <p class="text-body-secondary small mb-0">Logic Circuits and Design</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body text-center">
+                <p class="fw-bold mb-1">DATA100</p>
+                <p class="text-body-secondary small mb-0">Principles of Data Science</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body text-center">
+                <p class="fw-bold mb-1">LBYCPG3</p>
+                <p class="text-body-secondary small mb-0">Web Development</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-body text-center">
+                <p class="fw-bold mb-1">LBYCPO1</p>
+                <p class="text-body-secondary small mb-0">Operating Systems Laboratory</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         REFERENCES (from references.html — full content)
+         FEATURE 2: Cards   FEATURE 5: Grid
+         ============================================================ -->
+    <section id="references" class="portfolio-section section-alt">
+      <div class="container">
+        <h2 class="section-heading text-center mb-2">References</h2>
+        <p class="text-center text-body-secondary mb-5"><em>DISCLAIMER: This portion of the portfolio is a work in progress and contains non-factual data at the moment.</em></p>
+
+        <div class="row row-cols-1 row-cols-lg-3 g-4">
+
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="fs-2 mb-2">👩‍🏫</div>
+                <h3 class="card-title h5">Dr. Maria Santos</h3>
+                <p class="text-rust fw-medium mb-1">Associate Professor</p>
+                <p class="text-body-secondary small mb-2">De La Salle University — ECE Department</p>
+                <p class="text-body-secondary small">Dr. Santos is my thesis advisor and professor for Advanced Embedded Systems. She has supervised my research work in IoT applications and provided invaluable guidance throughout my academic journey.</p>
+                <hr>
+                <p class="text-body-secondary small mb-0">📧 maria.santos@dlsu.edu.ph<br>📞 +63 1 2345 678<br>🏢 Br. Andrew Gonzalez Hall, Room 901<br><strong>Relationship:</strong> Thesis Advisor &amp; Professor (1 year)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="fs-2 mb-2">👨‍💼</div>
+                <h3 class="card-title h5">Engr. James Cruz</h3>
+                <p class="text-rust fw-medium mb-1">Senior Hardware Engineer</p>
+                <p class="text-body-secondary small mb-2">TechVenture Solutions Inc.</p>
+                <p class="text-body-secondary small">Engr. Cruz was my supervisor during my internship at TechVenture Solutions. He mentored me in embedded systems development and circuit design for smart city applications.</p>
+                <hr>
+                <p class="text-body-secondary small mb-0">📧 j.cruz@techventure.com.ph<br>📞 +63 917 123 4567<br>🏢 Makati City, Metro Manila<br><strong>Relationship:</strong> Internship Supervisor (3 months)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="fs-2 mb-2">👩‍💼</div>
+                <h3 class="card-title h5">Prof. Jennifer Reyes</h3>
+                <p class="text-rust fw-medium mb-1">Assistant Professor</p>
+                <p class="text-body-secondary small mb-2">De La Salle University — College of Business</p>
+                <p class="text-body-secondary small">Prof. Reyes taught my Financial Risk Management courses and supervised my minor thesis on financial analytics. She has been instrumental in developing my understanding of fintech applications.</p>
+                <hr>
+                <p class="text-body-secondary small mb-0">📧 jennifer.reyes@dlsu.edu.ph<br>📞 +63 2 8524 4611<br>🏢 Br. Andrew Gonzalez Hall, Room 902<br><strong>Relationship:</strong> Minor Thesis Advisor &amp; Professor (1.5 years)</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row justify-content-center mt-4">
+          <div class="col-12 col-lg-8">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body text-center">
+                <p class="mb-0 text-body-secondary">📝 Additional references and recommendation letters are available upon request. Please feel free to contact me if you need more detailed information or formal recommendation letters from any of the references listed above.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         CONTACT — FEATURE 5: Grid   FEATURE 6: Tooltips
+         ============================================================ -->
+    <section id="contact" class="portfolio-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-7">
+            <h2 class="section-heading text-center mb-2">Get in Touch</h2>
+            <p class="text-center text-body-secondary mb-5">Whether it's a project, an opportunity, or just a question — feel free to reach out. I'm open to it.</p>
+
+            <form action="https://formsubmit.co/erin_quiazon@dlsu.edu.ph" method="POST" id="contactForm" novalidate>
+              <input type="hidden" name="_subject" value="New Message from Bootstrap Portfolio — Erin Quiazon">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+
+              <div class="row g-3 mb-3">
+                <div class="col-12 col-md-6">
+                  <label for="contactName" class="form-label fw-medium">Name</label>
+                  <input type="text" class="form-control" id="contactName" name="name" placeholder="Your name" required>
+                  <div class="invalid-feedback" id="nameErr">Please enter your name (at least 2 characters).</div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="contactEmail" class="form-label fw-medium">Email</label>
+                  <input type="email" class="form-control" id="contactEmail" name="email" placeholder="your@email.com" required>
+                  <div class="invalid-feedback" id="emailErr">Please enter a valid email address.</div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="contactSubject" class="form-label fw-medium">Subject</label>
+                <input type="text" class="form-control" id="contactSubject" name="subject" placeholder="What's this about?" required>
+                <div class="invalid-feedback" id="subjectErr">Please add a subject (at least 3 characters).</div>
+              </div>
+              <div class="mb-4">
+                <label for="contactMessage" class="form-label fw-medium">Message</label>
+                <textarea class="form-control" id="contactMessage" name="message" rows="5" placeholder="Tell me more..." required></textarea>
+                <div class="invalid-feedback" id="messageErr">Please write a message (at least 10 characters).</div>
+              </div>
+              <button type="submit" class="btn btn-rust w-100 py-2" id="submitBtn">Send Message</button>
+              <div class="status-msg text-center mt-3" id="statusMsg"></div>
+            </form>
+
+            <div class="d-flex justify-content-center gap-4 mt-5">
+              <a href="https://github.com/erin-kyu" class="social-link" target="_blank" rel="noopener noreferrer"
+                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Visit my GitHub"
+                aria-label="GitHub profile"><i class="bi bi-github fs-4"></i></a>
+              <a href="https://linkedin.com/in/" class="social-link" target="_blank" rel="noopener noreferrer"
+                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Connect on LinkedIn"
+                aria-label="LinkedIn profile"><i class="bi bi-linkedin fs-4"></i></a>
+              <a href="mailto:erin_quiazon@dlsu.edu.ph" class="social-link"
+                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Send me an email"
+                aria-label="Send email"><i class="bi bi-envelope-fill fs-4"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="py-4 border-top">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <p class="mb-0 text-body-secondary small">Built with Bootstrap 5. Hosted on Vercel.</p>
+      <p class="mb-0 text-body-secondary small">Erin M. Quiazon &copy; 2026</p>
+    </div>
+  </footer>
+
+  <!-- Greeting Dialog -->
+  <div id="greeting-overlay" class="greeting-overlay">
+    <div class="greeting-dialog" id="greeting-dialog">
+      <span id="greeting-emoji" class="greeting-emoji"></span>
+      <div id="greeting-title" class="greeting-title"></div>
+      <div id="greeting-sub" class="greeting-sub"></div>
+      <button id="greeting-btn" class="btn btn-rust mt-3" onclick="closeGreeting()">Continue</button>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="js/main.js"></script>
+
 </body>
 </html>
