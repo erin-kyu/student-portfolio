@@ -244,7 +244,7 @@
 
 
     <!-- ============================================================
-         PROJECTS
+         PROJECTS (cards only — modals moved outside main)
          ============================================================ -->
     <section id="projects" class="portfolio-section section-alt">
       <div class="container">
@@ -319,89 +319,6 @@
         </div>
       </div>
     </section>
-
-
-    <!-- ============================================================
-         PROJECT MODALS
-         ============================================================ -->
-    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="projectModal1Label">Personal Portfolio Website</h4>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img src="assets/images/portfolio-home-screenshot.png" class="img-fluid rounded mb-4" alt="Full screenshot of portfolio website">
-            <div class="d-flex flex-wrap gap-2 mb-3">
-              <span class="badge bg-success">Completed</span>
-              <span class="badge bg-body-secondary">Term 8, January 2026</span>
-              <span class="badge bg-body-secondary">LBYCPG3 — Web Development</span>
-            </div>
-            <p>Designed and developed this portfolio website using HTML, CSS, and modern CSS Grid/Flexbox layout structure. The site showcases my academic journey, skills, and experiences in an organized and visually appealing manner. Implemented responsive design principles and modern CSS techniques including gradients and animations.</p>
-            <p class="fw-medium mb-2">Technologies used:</p>
-            <div class="d-flex flex-wrap gap-2 mb-3">
-              <span class="badge bg-primary-subtle text-primary-emphasis">HTML</span>
-              <span class="badge bg-primary-subtle text-primary-emphasis">CSS</span>
-              <span class="badge bg-primary-subtle text-primary-emphasis">JavaScript</span>
-              <span class="badge bg-secondary-subtle text-secondary-emphasis">Web Design</span>
-              <span class="badge bg-secondary-subtle text-secondary-emphasis">Responsive Layout</span>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <a href="https://erin-kyu.github.io/my-website-portfolio/" class="btn btn-rust" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i>Live Demo</a>
-            <a href="https://github.com/erin-kyu/my-website-portfolio" class="btn btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="bi bi-github me-1"></i>Source Code</a>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="projectModal2Label">Financial Technology &amp; Excel</h4>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img src="assets/images/excel.png" class="img-fluid rounded mb-4" alt="Full screenshot of Excel financial analysis">
-            <div class="d-flex flex-wrap gap-2 mb-3">
-              <span class="badge bg-success">Completed</span>
-              <span class="badge bg-body-secondary">FINRISD / FMDFINA</span>
-              <span class="badge bg-body-secondary">Financial Risk &amp; Analytics Minor</span>
-            </div>
-            <p>Working with Excel for data analysis and financial modeling as part of my minor in Financial Risk and Analytics. Projects include bond valuation, duration/convexity analysis, CAPM modeling, and gap analysis for market risk assessment.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModal3Label" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="projectModal3Label">Data Structures &amp; Algorithms</h4>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img src="assets/images/vscode.png" class="img-fluid rounded mb-4" alt="Full screenshot of VS Code with C++ code">
-            <div class="d-flex flex-wrap gap-2 mb-3">
-              <span class="badge bg-success">Completed</span>
-              <span class="badge bg-body-secondary">Term 2, 2024</span>
-              <span class="badge bg-body-secondary">Data Structures &amp; Algorithms</span>
-            </div>
-            <p>Implemented fundamental data structures including linked lists, stacks, queues, trees, and graphs in C++. Completed programming assignments focusing on algorithm efficiency and optimization. Analyzed time and space complexity for various operations.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
     <!-- ============================================================
@@ -523,7 +440,7 @@
 
 
     <!-- ============================================================
-         EDUCATION (with coursework INSIDE the section)
+         EDUCATION
          ============================================================ -->
     <section id="education" class="portfolio-section">
       <div class="container">
@@ -730,6 +647,89 @@
     </section>
 
   </main>
+
+
+  <!-- ============================================================
+       PROJECT MODALS (outside <main> to avoid z-index stacking issues)
+       ============================================================ -->
+  <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="projectModal1Label">Personal Portfolio Website</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="assets/images/portfolio-home-screenshot.png" class="img-fluid rounded mb-4" alt="Full screenshot of portfolio website">
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge bg-success">Completed</span>
+            <span class="badge bg-body-secondary">Term 8, January 2026</span>
+            <span class="badge bg-body-secondary">LBYCPG3 — Web Development</span>
+          </div>
+          <p>Designed and developed this portfolio website using HTML, CSS, and modern CSS Grid/Flexbox layout structure. The site showcases my academic journey, skills, and experiences in an organized and visually appealing manner. Implemented responsive design principles and modern CSS techniques including gradients and animations.</p>
+          <p class="fw-medium mb-2">Technologies used:</p>
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge bg-primary-subtle text-primary-emphasis">HTML</span>
+            <span class="badge bg-primary-subtle text-primary-emphasis">CSS</span>
+            <span class="badge bg-primary-subtle text-primary-emphasis">JavaScript</span>
+            <span class="badge bg-secondary-subtle text-secondary-emphasis">Web Design</span>
+            <span class="badge bg-secondary-subtle text-secondary-emphasis">Responsive Layout</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="https://erin-kyu.github.io/my-website-portfolio/" class="btn btn-rust" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right me-1"></i>Live Demo</a>
+          <a href="https://github.com/erin-kyu/my-website-portfolio" class="btn btn-outline-secondary" target="_blank" rel="noopener noreferrer"><i class="bi bi-github me-1"></i>Source Code</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="projectModal2Label">Financial Technology &amp; Excel</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="assets/images/excel.png" class="img-fluid rounded mb-4" alt="Full screenshot of Excel financial analysis">
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge bg-success">Completed</span>
+            <span class="badge bg-body-secondary">FINRISD / FMDFINA</span>
+            <span class="badge bg-body-secondary">Financial Risk &amp; Analytics Minor</span>
+          </div>
+          <p>Working with Excel for data analysis and financial modeling as part of my minor in Financial Risk and Analytics. Projects include bond valuation, duration/convexity analysis, CAPM modeling, and gap analysis for market risk assessment.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="projectModal3Label">Data Structures &amp; Algorithms</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="assets/images/vscode.png" class="img-fluid rounded mb-4" alt="Full screenshot of VS Code with C++ code">
+          <div class="d-flex flex-wrap gap-2 mb-3">
+            <span class="badge bg-success">Completed</span>
+            <span class="badge bg-body-secondary">Term 2, 2024</span>
+            <span class="badge bg-body-secondary">Data Structures &amp; Algorithms</span>
+          </div>
+          <p>Implemented fundamental data structures including linked lists, stacks, queues, trees, and graphs in C++. Completed programming assignments focusing on algorithm efficiency and optimization. Analyzed time and space complexity for various operations.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <!-- ============================================================

@@ -300,3 +300,14 @@ footer { background-color: var(--sand); border-top: 1px solid var(--line) !impor
     background-color: #d4a373;
     box-shadow: 0 2px 4px rgba(212, 163, 115, 0.2);
 }
+
+.modal {
+  z-index: 1060 !important;
+}
+.modal-backdrop {
+  z-index: 1055 !important;
+}
+
+body.modal-open .navbar {
+  z-index: 1 !important;
+}
