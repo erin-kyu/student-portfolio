@@ -78,24 +78,38 @@ if (themeToggle) {
 
 
 // ================================================================
-// BOOTSTRAP FEATURES — only if Bootstrap's JS loaded
+// BOOTSTRAP FEATURES + MOBILE MENU
 // ================================================================
+const navbarCollapse = document.getElementById('navbarMain');
+const navbarToggler = document.querySelector('.navbar-toggler');
+
 if (window.bootstrap) {
   // Tooltips
   document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
-
-  // Close mobile navbar on link click
-  const navbarCollapse = document.getElementById('navbarMain');
-  if (navbarCollapse) {
-    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
-    document.querySelectorAll('#navbarMain .nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        if (navbarCollapse.classList.contains('show')) bsCollapse.hide();
-      });
+} else {
+  console.warn('Bootstrap JS did not load — using fallback menu.');
+  // Fallback: open/close the mobile menu without Bootstrap
+  if (navbarCollapse && navbarToggler) {
+    navbarToggler.addEventListener('click', () => {
+      const open = navbarCollapse.classList.toggle('show');
+      navbarToggler.setAttribute('aria-expanded', open);
     });
   }
-} else {
-  console.warn('Bootstrap JS did not load — tooltips and modals will not work.');
+}
+
+// Close the mobile menu after tapping a link
+if (navbarCollapse) {
+  document.querySelectorAll('#navbarMain .nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (!navbarCollapse.classList.contains('show')) return;
+      if (window.bootstrap) {
+        bootstrap.Collapse.getOrCreateInstance(navbarCollapse, { toggle: false }).hide();
+      } else {
+        navbarCollapse.classList.remove('show');
+        if (navbarToggler) navbarToggler.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
 }
 
 
