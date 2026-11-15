@@ -234,13 +234,14 @@ sectionElements.forEach(section => {
       body: new FormData(form),
       headers: { 'Accept': 'application/json' }
     })
-    .then(res => {
-      if (res.ok) {
+    .then(res => res.json())
+    .then(data => {
+      if (data.success === true || data.success === 'true') {
         showStatus('✓ Message sent! I\'ll get back to you soon.', 'success');
         form.reset();
         Object.values(fields).forEach(({ el }) => { if (el) el.classList.remove('is-invalid'); });
       } else {
-        showStatus('Something went wrong. Please try again.', 'error');
+        showStatus(data.message || 'Something went wrong. Please try again.', 'error');
       }
     })
     .catch(() => { showStatus('Network error. Check your connection and try again.', 'error'); })
