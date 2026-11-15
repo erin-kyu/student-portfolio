@@ -361,3 +361,24 @@ body {
     width: 100%;
   }
 }
+
+/* ─── Summary & links ────────────────────────────────────────── */
+.summary-text {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    line-height: 1.75;
+}
+.skill-label { min-width: 140px; }
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: var(--rust);
+    text-decoration: none;
+}
+.back-link:hover { color: var(--rust-dim); }
+.project-link { color: var(--rust); text-decoration: none; }
+.project-link:hover { text-decoration: underline; }
+@media print { .back-link { display: none; } }
