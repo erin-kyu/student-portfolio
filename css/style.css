@@ -323,3 +323,15 @@ body.modal-open .navbar {
 
 /* --- Skill group cards --- */
 .skill-group-card .badge { font-size: 0.8rem; }
+
+/* --- Mobile fixes --- */
+html, body { overflow-x: hidden; }
+
+@media (max-width: 575.98px) {
+  .brand-sub { display: none; }          /* hide subtitle on small phones so the name fits */
+  .brand-name { font-size: 0.95rem; }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse { max-height: calc(100vh - 70px); overflow-y: auto; }  /* menu scrolls if it's taller than the screen */
+}
