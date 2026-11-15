@@ -1,80 +1,7 @@
 // js/main.js
 
-// --- FEATURE 6: Initialize Bootstrap Tooltips ---
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-const tooltipList = [...tooltipTriggerList].map(
-  tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl)
-);
-
-// --- FEATURE 3: Keyboard support for modal cards ---
-document.querySelectorAll('.project-card[data-bs-toggle="modal"]').forEach(card => {
-  card.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
-  });
-});
-
-// --- Dark Mode Toggle ---
-const themeToggle = document.getElementById('theme-toggle');
-if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    const html = document.documentElement;
-    const current = html.getAttribute('data-bs-theme') || 'light';
-    html.setAttribute('data-bs-theme', current === 'dark' ? 'light' : 'dark');
-    themeToggle.textContent = current === 'dark' ? 'Dark Mode' : 'Light Mode';
-  });
-}
-
-// --- Active nav link on scroll ---
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-const navObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(link => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
-      });
-    }
-  });
-}, { threshold: 0.3 });
-sections.forEach(section => navObserver.observe(section));
-
-// --- Scroll fade-in ---
-const sectionElements = document.querySelectorAll('.portfolio-section, .stats-section, .clock-section');
-const fadeObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('section-visible');
-      fadeObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.1 });
-
-sectionElements.forEach(section => {
-  section.classList.add('section-hidden');
-  fadeObserver.observe(section);
-});
-
-const fadeStyle = document.createElement('style');
-fadeStyle.textContent = `
-  .section-hidden { opacity: 0; transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1); }
-  .section-visible { opacity: 1; }
-`;
-document.head.appendChild(fadeStyle);
-
-// --- Close mobile navbar on link click ---
-const navbarCollapse = document.getElementById('navbarMain');
-if (navbarCollapse) {
-  const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
-  document.querySelectorAll('#navbarMain .nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      if (navbarCollapse.classList.contains('show')) bsCollapse.hide();
-    });
-  });
-}
-
-
 // ================================================================
-// CLOCK (from original homepage)
+// CLOCK — runs first so nothing above it can block it
 // ================================================================
 function updateClock() {
   const now = new Date();
@@ -100,10 +27,10 @@ setInterval(updateClock, 1000);
 
 
 // ================================================================
-// GREETING DIALOG (from original homepage)
+// GREETING DIALOG
 // ================================================================
 const greetings = [
-  { range: [5, 11],  title: "Good Morning!",  sub: "Hope your day is off to a great start.", emoji: "☀️" },
+  { range: [5, 11],  title: "Good Morning!",   sub: "Hope your day is off to a great start.", emoji: "☀️" },
   { range: [12, 16], title: "Good Afternoon!", sub: "Hope you're having a productive day.", emoji: "🌤️" },
   { range: [17, 20], title: "Good Evening!",   sub: "The day is winding down — take it easy.", emoji: "🌇" },
   { range: [21, 23], title: "Good Night!",     sub: "Don't stay up too late — rest up!", emoji: "🌙" },
@@ -115,29 +42,118 @@ function getGreeting() {
   return greetings.find(g => hour >= g.range[0] && hour <= g.range[1]);
 }
 
-window.addEventListener('load', function () {
+function fillGreeting() {
   const g = getGreeting();
+  if (!g) return;
   const emojiEl = document.getElementById('greeting-emoji');
   const titleEl = document.getElementById('greeting-title');
   const subEl = document.getElementById('greeting-sub');
   const clockGreeting = document.getElementById('clock-greeting');
-
   if (emojiEl) emojiEl.textContent = g.emoji;
   if (titleEl) titleEl.textContent = g.title;
   if (subEl) subEl.textContent = g.sub;
   if (clockGreeting) clockGreeting.textContent = g.title;
-});
+}
+fillGreeting();
 
 function closeGreeting() {
   const overlay = document.getElementById('greeting-overlay');
   if (overlay) overlay.style.display = 'none';
 }
-// Make closeGreeting globally accessible
 window.closeGreeting = closeGreeting;
 
 
 // ================================================================
-// CONTACT FORM VALIDATION (from original contact.js)
+// DARK MODE TOGGLE
+// ================================================================
+const themeToggle = document.getElementById('theme-toggle');
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-bs-theme') || 'light';
+    html.setAttribute('data-bs-theme', current === 'dark' ? 'light' : 'dark');
+    themeToggle.textContent = current === 'dark' ? 'Dark Mode' : 'Light Mode';
+  });
+}
+
+
+// ================================================================
+// BOOTSTRAP FEATURES — only if Bootstrap's JS loaded
+// ================================================================
+if (window.bootstrap) {
+  // Tooltips
+  document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+
+  // Close mobile navbar on link click
+  const navbarCollapse = document.getElementById('navbarMain');
+  if (navbarCollapse) {
+    const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+    document.querySelectorAll('#navbarMain .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navbarCollapse.classList.contains('show')) bsCollapse.hide();
+      });
+    });
+  }
+} else {
+  console.warn('Bootstrap JS did not load — tooltips and modals will not work.');
+}
+
+
+// ================================================================
+// KEYBOARD SUPPORT FOR PROJECT CARDS
+// ================================================================
+document.querySelectorAll('.project-card[data-bs-toggle="modal"]').forEach(card => {
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+  });
+});
+
+
+// ================================================================
+// ACTIVE NAV LINK ON SCROLL
+// ================================================================
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+sections.forEach(section => navObserver.observe(section));
+
+
+// ================================================================
+// SCROLL FADE-IN
+// ================================================================
+const fadeStyle = document.createElement('style');
+fadeStyle.textContent = `
+  .section-hidden { opacity: 0; transition: opacity 0.6s cubic-bezier(0.25, 0.1, 0.25, 1); }
+  .section-visible { opacity: 1; }
+`;
+document.head.appendChild(fadeStyle);
+
+const sectionElements = document.querySelectorAll('.portfolio-section, .stats-section, .clock-section');
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('section-visible');
+      fadeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+sectionElements.forEach(section => {
+  section.classList.add('section-hidden');
+  fadeObserver.observe(section);
+});
+
+
+// ================================================================
+// CONTACT FORM VALIDATION
 // ================================================================
 (function () {
   const form = document.getElementById('contactForm');
@@ -160,21 +176,17 @@ window.closeGreeting = closeGreeting;
 
   const validators = { name: validateName, email: validateEmail, subject: validateSubject, message: validateMessage };
 
-  // Real-time validation
-  Object.entries(fields).forEach(([key, { el, err }]) => {
+  Object.entries(fields).forEach(([key, { el }]) => {
     if (!el) return;
     el.addEventListener('input', () => {
       const valid = validators[key](el.value);
-      if (el.value.length > 0) {
-        el.classList.toggle('is-invalid', !valid);
-      }
+      if (el.value.length > 0) el.classList.toggle('is-invalid', !valid);
     });
     el.addEventListener('blur', () => {
       el.classList.toggle('is-invalid', !validators[key](el.value));
     });
   });
 
-  // Rate limiting
   let submitTimes = [];
   function isRateLimited() {
     const now = Date.now();
@@ -187,7 +199,6 @@ window.closeGreeting = closeGreeting;
   const formLoadTime = Date.now();
   function isTooFast() { return (Date.now() - formLoadTime) / 1000 < 2; }
 
-  // Spam filter
   const spamWords = ["free money", "buy now", "click here", "subscribe", "promo", "winner", "congratulations", "act now", "limited offer", "earn money"];
   function containsSpam(text) { return spamWords.some(word => text.toLowerCase().includes(word)); }
 
@@ -201,8 +212,6 @@ window.closeGreeting = closeGreeting;
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     clearStatus();
-
-    // Clear previous validation
     Object.values(fields).forEach(({ el }) => { if (el) el.classList.remove('is-invalid'); });
 
     const vals = {};
