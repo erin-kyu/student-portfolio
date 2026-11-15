@@ -311,3 +311,15 @@ footer { background-color: var(--sand); border-top: 1px solid var(--line) !impor
 body.modal-open .navbar {
   z-index: 1 !important;
 }
+
+/* --- Monogram logo (replaces Snoopy image) --- */
+.brand-monogram {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--rust); color: #fff;
+  font-family: var(--serif); font-size: 0.95rem; letter-spacing: 0.02em;
+  flex-shrink: 0;
+}
+
+/* --- Skill group cards --- */
+.skill-group-card .badge { font-size: 0.8rem; }
